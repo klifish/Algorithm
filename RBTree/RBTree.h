@@ -15,10 +15,21 @@ struct Node {
 class RBTree
 {
 	Node* root;
+
 public:
-	void leftRotate(Node* n);
-	void rightRotate(Node* n);
+
 	RBTree();
 	~RBTree();
+	void RBDelete(Node* n);
+	//void RBMinimum();
+
+private:
+	void deleteFixup(Node* x);
+	void insertFixup(Node* z);
+	void leftRotate(Node* n);
+	void rightRotate(Node* n);
+	void transplant(Node* u, Node* v);
+	Node* minimum(Node* start);
+
 };
 
